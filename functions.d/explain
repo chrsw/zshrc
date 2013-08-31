@@ -1,0 +1,1 @@
+explain(){ curl -s $(echo "http://explainshell.com/explain/$1?args=${@:q}" | sed -e 's/ /+/g') | sed -n '/<pre/,/<\/pre>/p' | sed 's/<[^>]*>//g' | sed -e 's/^ *//g;s/ *$//g' | grep '.' | cat }
